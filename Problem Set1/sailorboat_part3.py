@@ -3,11 +3,11 @@ from base import Base, engine
 
 class Cost(Base):
     __tablename__ = 'costs'
-    cid = Column(Integer, primary_key=True)
+    bid = Column(Integer, primary_key=True)
     pid = Column(Integer, primary_key=True)
 
     def __init__(self, pid, cid):
-        self.pid = pid
+        self.bid = bid
         self.cid = cid
 
 class Prices(Base):
