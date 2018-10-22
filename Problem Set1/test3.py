@@ -10,11 +10,9 @@ from datetime import date
 def stmt1():
     with engine.connect() as conn:
     	result = conn.execute("select price_num from prices where pid = 1;")
-    	rows = result.fetchall()
-    	result = []
-    	for r in rows:
-    		result.append(r[0])
-    	return result
+    	row = result.first()
+    	return row[0]
+
 
 
 def test_stmt1():
@@ -30,4 +28,4 @@ with open('./data.txt', 'r') as fp:
         with engine.connect() as conn:
             conn.execute(line);
 
-stmt1()
+test_stmt1()
