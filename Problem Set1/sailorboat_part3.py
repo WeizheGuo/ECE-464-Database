@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Date
+from sqlalchemy import Column, String, Integer
 from base import Base, engine
 
 class Cost(Base):
@@ -10,7 +10,7 @@ class Cost(Base):
         self.bid = bid
         self.cid = cid
 
-class Prices(Base):
+class Price(Base):
     __tablename__ = 'prices'
     pid = Column(Integer, primary_key=True)
     ptype = Column(String(20))

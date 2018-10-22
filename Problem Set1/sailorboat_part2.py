@@ -42,14 +42,3 @@ class Boat(Base):
         self.color = color
         self.length = length
 
-
-if __name__ == '__main__':
-
-    Base.metadata.drop_all(engine)
-    Base.metadata.create_all(engine)
-
-    with engine.connect() as conn:
-        with open('./input.txt', 'r') as lines:
-            for line in lines:
-                line = line.strip('\n')
-                conn.execute(line)
